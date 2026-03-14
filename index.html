@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Michael M. Moradi, MD — PM&R Resident</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#f5f4f0;
+  --white:#ffffff;
+  --navy:#14213d;
+  --navy2:#1e3256;
+  --teal:#2a7d6f;
+  --teal-light:#e8f5f2;
+  --gold:#c9a84c;
+  --gold-light:#fdf6e3;
+  --muted:#6b7280;
+  --border:#e5e1d8;
+  --text:#1a1a1a;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);font-size:15px;line-height:1.7}
+
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:1rem 3.5rem;
+  background:rgba(245,244,240,0.95);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--border);
+}
+.nav-name{font-family:'Playfair Display',serif;font-size:1rem;font-weight:500;color:var(--navy);letter-spacing:0.02em}
+.nav-name span{font-size:0.75rem;font-style:italic;color:var(--muted);margin-left:0.5rem;font-family:'Inter',sans-serif}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color 0.2s}
+.nav-links a:hover{color:var(--navy)}
+
+.hero{min-height:100vh;display:grid;grid-template-columns:1.1fr 0.9fr;padding-top:60px}
+.hero-left{
+  background:var(--navy);
+  padding:5rem 4rem 5rem 5rem;
+  display:flex;flex-direction:column;justify-content:center;
+  position:relative;overflow:hidden;
+}
+.hero-left::after{content:'';position:absolute;bottom:-80px;left:-80px;width:320px;height:320px;border-radius:50%;border:1px solid rgba(201,168,76,0.1)}
+.hero-left::before{content:'';position:absolute;top:-60px;right:-60px;width:220px;height:220px;border-radius:50%;border:1px solid rgba(42,125,111,0.15)}
+.pill{display:inline-flex;align-items:center;gap:0.5rem;background:rgba(42,125,111,0.18);color:#5ecbb8;font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;padding:0.35rem 0.9rem;border-radius:100px;border:1px solid rgba(94,203,184,0.2);margin-bottom:1.75rem;width:fit-content}
+.pill-dot{width:6px;height:6px;background:#5ecbb8;border-radius:50%;animation:pulse 2s ease infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.3}}
+h1{font-family:'Playfair Display',serif;font-size:clamp(2.4rem,3.5vw,3.4rem);font-weight:400;line-height:1.12;color:#fff;margin-bottom:0.4rem}
+h1 em{font-style:italic;color:var(--gold)}
+.hero-role{font-size:0.82rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:2rem}
+.hero-bio{font-size:0.9rem;color:rgba(255,255,255,0.62);line-height:1.85;max-width:420px;margin-bottom:2.5rem}
+.hero-tags{display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:3rem}
+.tag{font-size:0.7rem;letter-spacing:0.08em;padding:0.3rem 0.75rem;border:1px solid rgba(201,168,76,0.3);color:rgba(255,255,255,0.55)}
+.hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,0.06)}
+.hstat{background:var(--navy2);padding:1.25rem 1rem;text-align:center}
+.hstat-num{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:500;color:var(--gold);line-height:1}
+.hstat-lbl{font-size:0.68rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-top:0.25rem}
+
+.hero-right{background:var(--white);padding:5rem 4rem;display:flex;flex-direction:column;justify-content:center}
+.timeline-heading{font-size:0.7rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--teal);margin-bottom:2rem}
+.tl-item{display:flex;gap:1.25rem;padding-bottom:1.75rem;position:relative}
+.tl-item:not(:last-child)::after{content:'';position:absolute;left:10px;top:22px;bottom:0;width:1px;background:var(--border)}
+.tl-dot{width:20px;height:20px;border-radius:50%;background:var(--white);border:2px solid var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+.tl-dot.active{border-color:var(--teal);background:var(--teal-light)}
+.tl-dot.active::after{content:'';width:7px;height:7px;background:var(--teal);border-radius:50%}
+.tl-period{font-size:0.68rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:0.2rem}
+.tl-title{font-size:0.92rem;font-weight:500;color:var(--navy);margin-bottom:0.15rem}
+.tl-sub{font-size:0.8rem;color:var(--muted)}
+.tl-badge{display:inline-block;margin-top:0.4rem;font-size:0.65rem;letter-spacing:0.08em;text-transform:uppercase;background:var(--teal-light);color:var(--teal);padding:0.2rem 0.6rem;border-radius:100px}
+
+.about-sec{background:var(--white);padding:5rem}
+.about-inner{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
+.sec-label{font-size:0.7rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--teal);margin-bottom:0.75rem}
+.sec-title{font-family:'Playfair Display',serif;font-size:clamp(1.7rem,2.5vw,2.2rem);font-weight:400;color:var(--navy);margin-bottom:1.5rem;line-height:1.25}
+.about-text{font-size:0.9rem;color:var(--muted);line-height:1.85;margin-bottom:1.25rem}
+.about-photo{width:100%;aspect-ratio:1;object-fit:cover;object-position:top;border-radius:4px}
+.about-photo-wrap{position:relative}
+.about-photo-wrap::after{content:'';position:absolute;bottom:-12px;right:-12px;width:60%;height:60%;border:2px solid var(--gold);border-radius:4px;z-index:-1}
+.interests{display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:1.5rem}
+.interest-tag{font-size:0.75rem;padding:0.3rem 0.9rem;background:var(--bg);border:1px solid var(--border);color:var(--muted);border-radius:100px}
+
+.education{background:var(--bg);padding:5rem}
+.edu-list{display:flex;flex-direction:column;gap:0}
+.edu-item{display:grid;grid-template-columns:180px 1fr;border-bottom:1px solid var(--border);padding:2rem 0}
+.edu-item:first-child{border-top:1px solid var(--border)}
+.edu-year{font-size:0.78rem;color:var(--muted);padding-top:0.15rem}
+.edu-degree{font-size:0.95rem;font-weight:500;color:var(--navy);margin-bottom:0.2rem}
+.edu-school{font-size:0.85rem;color:var(--teal);margin-bottom:0.4rem}
+.edu-detail{font-size:0.8rem;color:var(--muted)}
+.edu-badge{display:inline-block;margin-top:0.5rem;font-size:0.65rem;letter-spacing:0.08em;text-transform:uppercase;padding:0.2rem 0.65rem;border-radius:100px}
+.edu-badge.current{background:var(--teal-light);color:var(--teal)}
+.edu-badge.done{background:var(--bg);color:var(--muted);border:1px solid var(--border)}
+
+.contact-sec{background:var(--navy);padding:5rem}
+.contact-sec .sec-label{color:var(--gold)}
+.contact-sec .sec-title{color:#fff;margin-bottom:2.5rem}
+.contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.contact-card{border:1px solid rgba(201,168,76,0.2);padding:2rem 1.75rem;transition:border-color 0.2s,background 0.2s;text-decoration:none;display:block}
+.contact-card:hover{border-color:var(--gold);background:rgba(201,168,76,0.05)}
+.contact-icon{font-size:1.3rem;margin-bottom:1rem}
+.contact-type{font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:0.4rem}
+.contact-val{font-size:0.9rem;color:#fff;word-break:break-all}
+.contact-arrow{display:block;margin-top:1rem;font-size:0.75rem;color:var(--gold)}
+
+footer{background:var(--navy2);padding:1.75rem 5rem;display:flex;align-items:center;justify-content:space-between;border-top:1px solid rgba(255,255,255,0.06)}
+.footer-name{font-family:'Playfair Display',serif;font-size:0.95rem;color:#fff}
+.footer-name span{font-style:italic;color:var(--gold)}
+.footer-copy{font-size:0.72rem;color:rgba(255,255,255,0.3)}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+.hero-left>*{animation:fadeUp 0.55s ease both}
+.pill{animation-delay:0.05s}
+h1{animation-delay:0.15s}
+.hero-role{animation-delay:0.22s}
+.hero-bio{animation-delay:0.28s}
+.hero-tags{animation-delay:0.34s}
+.hero-stats{animation-delay:0.42s}
+
+@media(max-width:900px){
+  nav{padding:1rem 1.5rem}
+  .nav-links{display:none}
+  .hero{grid-template-columns:1fr;min-height:auto}
+  .hero-left{padding:4rem 2rem}
+  .hero-right{padding:3rem 2rem}
+  .about-sec,.education,.contact-sec{padding:3rem 2rem}
+  .about-inner{grid-template-columns:1fr}
+  .about-photo-wrap{order:-1}
+  .edu-item{grid-template-columns:1fr;gap:0.25rem}
+  .contact-grid{grid-template-columns:1fr}
+  footer{padding:1.5rem 2rem;flex-direction:column;gap:0.5rem;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-name">Michael M. Moradi, MD <span>PM&R Resident</span></div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-left">
+    <div class="pill"><span class="pill-dot"></span> PGY-1 · Currently in residency</div>
+    <h1>Michael M.<br>Moradi, <em>MD</em></h1>
+    <p class="hero-role">PM&R Resident &nbsp;·&nbsp; Westchester Medical Center</p>
+    <p class="hero-bio">A physiatrist-in-training at Westchester Medical Center with a passion for restoring function and improving quality of life. Drexel University College of Medicine graduate, proud Bruin, and lifelong learner — both in the clinic and on the court.</p>
+    <div class="hero-tags">
+      <span class="tag">Physical Medicine &amp; Rehab</span>
+      <span class="tag">Neurorehabilitation</span>
+      <span class="tag">Musculoskeletal</span>
+      <span class="tag">Westchester Medical Center</span>
+    </div>
+    <div class="hero-stats">
+      <div class="hstat"><div class="hstat-num">PGY-1</div><div class="hstat-lbl">Current year</div></div>
+      <div class="hstat"><div class="hstat-num">MD</div><div class="hstat-lbl">Drexel, 2025</div></div>
+      <div class="hstat"><div class="hstat-num">UCLA</div><div class="hstat-lbl">B.S. 2020</div></div>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <p class="timeline-heading">Journey so far</p>
+    <div>
+      <div class="tl-item">
+        <div class="tl-dot active"></div>
+        <div>
+          <p class="tl-period">2025 – Present</p>
+          <p class="tl-title">PM&R Residency — PGY-1</p>
+          <p class="tl-sub">Westchester Medical Center</p>
+          <span class="tl-badge">Current</span>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div>
+          <p class="tl-period">2021 – 2025</p>
+          <p class="tl-title">Doctor of Medicine, MD</p>
+          <p class="tl-sub">Drexel University College of Medicine</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div>
+          <p class="tl-period">2016 – 2020</p>
+          <p class="tl-title">B.S. in Psychobiology</p>
+          <p class="tl-sub">University of California, Los Angeles (UCLA)</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="about-sec" id="about">
+  <div class="about-inner">
+    <div>
+      <p class="sec-label">About me</p>
+      <h2 class="sec-title">Born in LA. Training in New York.</h2>
+      <p class="about-text">Hi, I'm Michael — a first-year PM&R resident at Westchester Medical Center. I grew up in Los Angeles and completed my undergraduate studies at UCLA, where I earned a B.S. in Psychobiology. I then moved across the country for medical school at Drexel University College of Medicine, graduating in 2025.</p>
+      <p class="about-text">Physical Medicine & Rehabilitation drew me in because of its unique focus on function, recovery, and the whole patient. I'm passionate about helping people rebuild their lives after injury or illness — whether that's a stroke survivor relearning to walk or an athlete returning to sport.</p>
+      <p class="about-text">Outside the hospital, you'll find me on the basketball or soccer court, rooting for the Lakers, or out on the trails.</p>
+      <div class="interests">
+        <span class="interest-tag">🏀 Basketball</span>
+        <span class="interest-tag">⚽ Soccer</span>
+        <span class="interest-tag">🥇 Lakers fan</span>
+        <span class="interest-tag">🥾 Hiking</span>
+        <span class="interest-tag">💻 GitHub</span>
+      </div>
+    </div>
+    <div class="about-photo-wrap">
+      <img class="about-photo" src="https://www.michaelmoradi.com/linkedin.jpg" alt="Michael Moradi, MD" onerror="this.style.display='none'"/>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section class="education" id="education">
+  <p class="sec-label">Academic background</p>
+  <h2 class="sec-title">Education &amp; training</h2>
+  <div class="edu-list">
+    <div class="edu-item">
+      <div class="edu-year">2025 – present</div>
+      <div class="edu-content">
+        <p class="edu-degree">Residency — Physical Medicine &amp; Rehabilitation</p>
+        <p class="edu-school">Westchester Medical Center</p>
+        <p class="edu-detail">PGY-1 · Valhalla, New York</p>
+        <span class="edu-badge current">In progress</span>
+      </div>
+    </div>
+    <div class="edu-item">
+      <div class="edu-year">2021 – 2025</div>
+      <div class="edu-content">
+        <p class="edu-degree">Doctor of Medicine (MD)</p>
+        <p class="edu-school">Drexel University College of Medicine</p>
+        <p class="edu-detail">Philadelphia, Pennsylvania</p>
+        <span class="edu-badge done">Completed</span>
+      </div>
+    </div>
+    <div class="edu-item">
+      <div class="edu-year">2016 – 2020</div>
+      <div class="edu-content">
+        <p class="edu-degree">Bachelor of Science — Psychobiology</p>
+        <p class="edu-school">University of California, Los Angeles (UCLA)</p>
+        <p class="edu-detail">Los Angeles, California</p>
+        <span class="edu-badge done">Completed</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-sec" id="contact">
+  <p class="sec-label">Get in touch</p>
+  <h2 class="sec-title">Let's connect</h2>
+  <div class="contact-grid">
+    <a class="contact-card" href="mailto:michaelmoradi1@gmail.com">
+      <div class="contact-icon">✉️</div>
+      <p class="contact-type">Email</p>
+      <p class="contact-val">michaelmoradi1@gmail.com</p>
+      <span class="contact-arrow">Send a message →</span>
+    </a>
+    <a class="contact-card" href="https://www.linkedin.com/in/michaelmoradi" target="_blank" rel="noopener">
+      <div class="contact-icon">💼</div>
+      <p class="contact-type">LinkedIn</p>
+      <p class="contact-val">linkedin.com/in/michaelmoradi</p>
+      <span class="contact-arrow">View profile →</span>
+    </a>
+    <a class="contact-card" href="https://github.com/mmoradi98" target="_blank" rel="noopener">
+      <div class="contact-icon">🖥️</div>
+      <p class="contact-type">GitHub</p>
+      <p class="contact-val">github.com/mmoradi98</p>
+      <span class="contact-arrow">See my work →</span>
+    </a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-name">Michael M. Moradi, <span>MD</span></div>
+  <p class="footer-copy">&copy; 2026 Michael M. Moradi, MD · PM&R Resident, Westchester Medical Center</p>
+</footer>
+
+</body>
+</html>
