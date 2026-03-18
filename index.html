@@ -144,6 +144,24 @@ h1 em{font-style:italic;color:var(--gold)}
 .edu-badge.current{background:var(--teal-light);color:var(--teal)}
 .edu-badge.done{background:var(--bg);color:var(--muted);border:1px solid var(--border)}
 
+
+/* PUBLICATIONS */
+.pub-sec{background:var(--bg);padding:5rem}
+.pub-list{display:flex;flex-direction:column;gap:1.25rem;margin-top:0}
+.pub-card{background:var(--white);border:1px solid var(--border);padding:1.75rem 2rem;border-radius:4px;transition:border-color 0.2s;text-decoration:none;display:block;color:inherit}
+.pub-card:hover{border-color:var(--teal)}
+.pub-card-inner{display:grid;grid-template-columns:1fr auto;gap:1rem;align-items:start}
+.pub-type-badge{font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;padding:0.2rem 0.7rem;border-radius:100px;background:var(--teal-light);color:var(--teal);display:inline-block;margin-bottom:0.75rem}
+.pub-title{font-family:'Playfair Display',serif;font-size:1rem;font-weight:400;color:var(--navy);line-height:1.4;margin-bottom:0.5rem}
+.pub-authors{font-size:0.78rem;color:var(--muted);margin-bottom:0.4rem}
+.pub-authors strong{color:var(--navy);font-weight:500}
+.pub-journal{font-size:0.78rem;color:var(--teal);font-style:italic}
+.pub-meta{display:flex;flex-direction:column;align-items:flex-end;gap:0.5rem;flex-shrink:0}
+.pub-year{font-family:'Playfair Display',serif;font-size:1.6rem;color:var(--border);font-weight:500;line-height:1}
+.pub-link{font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--teal);border:1px solid var(--teal-light);padding:0.25rem 0.75rem;border-radius:100px;white-space:nowrap;text-decoration:none}
+.pub-link:hover{background:var(--teal-light)}
+.pub-pmid{font-size:0.68rem;color:var(--muted)}
+
 /* COSTCO REVIEWS */
 .costco-sec{background:var(--white);padding:5rem}
 .costco-header{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:3rem;flex-wrap:wrap;gap:1rem}
@@ -256,6 +274,7 @@ h1{animation-delay:0.15s}
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#education">Education</a></li>
+    <li><a href="#publications">Publications</a></li>
     <li><a href="#costco">Costco reviews</a></li>
     <li><a href="#coming-soon">Coming soon</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -341,7 +360,7 @@ h1{animation-delay:0.15s}
       <h2 class="sec-title">Born in LA. Training in New York.</h2>
       <p class="about-text">Hi, I'm Michael a first-year PM&R resident at Westchester Medical Center. I grew up in Los Angeles and completed my undergraduate studies at UCLA, where I earned a B.S. in Psychobiology. I then moved across the country for medical school at Drexel University College of Medicine, graduating in 2025.</p>
       <p class="about-text">Physical Medicine & Rehabilitation drew me in because of its unique focus on function, recovery, and the whole patient. I'm passionate about helping people rebuild their lives after injury or illness whether that's a stroke survivor relearning to walk or an athlete returning to sport.</p>
-      <p class="about-text">Outside the hospital, you'll find me on the basketball or soccer court, rooting for the Lakers, or out on the trails.</p>
+      <p class="about-text">Outside the hospital, you'll find me on the basketball court or soccer field, rooting for the Lakers, or out on the trails.</p>
       <div class="interests">
         <span class="interest-tag">🏀 Basketball</span>
         <span class="interest-tag">⚽ Soccer</span>
@@ -391,6 +410,47 @@ h1{animation-delay:0.15s}
         <span class="edu-badge done">Completed</span>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- PUBLICATIONS -->
+<section class="pub-sec" id="publications">
+  <p class="sec-label">Research</p>
+  <h2 class="sec-title">Publications</h2>
+  <div class="pub-list">
+
+    <a class="pub-card" href="https://pubmed.ncbi.nlm.nih.gov/40843046/" target="_blank" rel="noopener">
+      <div class="pub-card-inner">
+        <div>
+          <span class="pub-type-badge">Case Report</span>
+          <p class="pub-title">Atypical Presentation of Merkel Cell Carcinoma with Pulmonary Embolism</p>
+          <p class="pub-authors">Garakani R, <strong>Moradi M</strong>, Batool F, Aameish M, Rather MA</p>
+          <p class="pub-journal">Oxford Medical Case Reports &nbsp;·&nbsp; August 2025</p>
+        </div>
+        <div class="pub-meta">
+          <span class="pub-year">2025</span>
+          <span class="pub-link">View on PubMed</span>
+          <span class="pub-pmid">PMID: 40843046</span>
+        </div>
+      </div>
+    </a>
+
+    <a class="pub-card" href="https://pubmed.ncbi.nlm.nih.gov/39703303/" target="_blank" rel="noopener">
+      <div class="pub-card-inner">
+        <div>
+          <span class="pub-type-badge">Case Report</span>
+          <p class="pub-title">Severe Transverse Myelitis Following Ankle Surgery Potentially Unmasking Late-Onset Systemic Lupus Erythematosus</p>
+          <p class="pub-authors">Jordan H, Sahni S, Nguyen M, <strong>Moradi M</strong>, Mumtaz S, Johnson L</p>
+          <p class="pub-journal">Cureus &nbsp;·&nbsp; November 2024</p>
+        </div>
+        <div class="pub-meta">
+          <span class="pub-year">2024</span>
+          <span class="pub-link">View on PubMed</span>
+          <span class="pub-pmid">PMID: 39703303</span>
+        </div>
+      </div>
+    </a>
+
   </div>
 </section>
 
