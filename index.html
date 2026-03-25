@@ -211,6 +211,38 @@ h1 em{font-style:italic;color:var(--gold)}
 .pending-pill{background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.25);color:#fff;font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;padding:0.4rem 1rem;border-radius:100px}
 .pending-dot{width:8px;height:8px;background:var(--gold);border-radius:50%;animation:pulse 1.8s ease infinite}
 
+
+/* CAREER ADVISING */
+.advising-sec{background:var(--white);padding:5rem}
+.advising-intro{max-width:600px;margin-bottom:3rem}
+.advising-intro p{font-size:0.92rem;color:var(--muted);line-height:1.85}
+.advising-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-bottom:3rem}
+.advising-card{background:var(--bg);border:1px solid var(--border);border-radius:4px;padding:2rem 1.75rem;position:relative;transition:border-color 0.2s}
+.advising-card:hover{border-color:var(--teal)}
+.advising-card.featured{border:2px solid var(--teal);background:var(--white)}
+.advising-card-badge{font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;padding:0.2rem 0.7rem;border-radius:100px;display:inline-block;margin-bottom:1rem}
+.advising-card-badge.free{background:var(--teal-light);color:var(--teal)}
+.advising-card-badge.popular{background:var(--gold-light);color:#8a6a1a}
+.advising-card-badge.standard{background:var(--bg);color:var(--muted);border:1px solid var(--border)}
+.advising-card-title{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:400;color:var(--navy);margin-bottom:0.35rem}
+.advising-rate{font-family:'Playfair Display',serif;font-size:2rem;font-weight:500;color:var(--navy);line-height:1;margin-bottom:0.25rem}
+.advising-rate span{font-size:0.8rem;font-family:'Inter',sans-serif;font-weight:400;color:var(--muted)}
+.advising-desc{font-size:0.82rem;color:var(--muted);line-height:1.7;margin:0.75rem 0 1rem}
+.advising-features{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.4rem}
+.advising-features li{font-size:0.8rem;color:var(--muted);padding-left:1.1rem;position:relative}
+.advising-features li::before{content:'›';position:absolute;left:0;color:var(--teal);font-weight:500}
+.advising-topics{margin-top:2.5rem;padding-top:2.5rem;border-top:1px solid var(--border)}
+.advising-topics-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin-top:1.25rem}
+.advising-topic{display:flex;align-items:flex-start;gap:0.75rem;padding:1rem;background:var(--bg);border-radius:4px}
+.advising-topic-icon{font-size:1.1rem;flex-shrink:0;margin-top:1px}
+.advising-topic-title{font-size:0.85rem;font-weight:500;color:var(--navy);margin-bottom:0.2rem}
+.advising-topic-desc{font-size:0.78rem;color:var(--muted);line-height:1.6}
+.advising-cta{margin-top:2.5rem;padding:2rem;background:var(--navy);border-radius:4px;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap}
+.advising-cta-text h3{font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:400;color:#fff;margin-bottom:0.3rem}
+.advising-cta-text p{font-size:0.85rem;color:rgba(255,255,255,0.55);margin:0}
+.advising-cta-btn{font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--navy);background:var(--gold);border:none;padding:0.85rem 2rem;cursor:pointer;text-decoration:none;display:inline-block;transition:opacity 0.2s;white-space:nowrap}
+.advising-cta-btn:hover{opacity:0.85}
+
 /* COMING SOON */
 .coming-sec{background:var(--bg);padding:5rem;text-align:center}
 .coming-inner{max-width:580px;margin:0 auto}
@@ -276,6 +308,7 @@ h1{animation-delay:0.15s}
     <li><a href="#education">Education</a></li>
     <li><a href="#publications">Publications</a></li>
     <li><a href="#costco">Costco reviews</a></li>
+    <li><a href="#advising">Advising</a></li>
     <li><a href="#coming-soon">Coming soon</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
@@ -640,6 +673,104 @@ h1{animation-delay:0.15s}
   </div>
 </section>
 
+<!-- CAREER ADVISING -->
+<section class="advising-sec" id="advising">
+  <div class="advising-intro">
+    <p class="sec-label">Career advising</p>
+    <h2 class="sec-title">Medical career guidance from someone in the trenches</h2>
+    <p>Whether you are navigating the medical school application process or targeting a PM&R residency, I offer personalized, honest guidance grounded in recent firsthand experience. All consultations begin with a free 20-minute introductory call.</p>
+  </div>
+
+  <div class="advising-grid">
+
+    <div class="advising-card">
+      <span class="advising-card-badge free">Free</span>
+      <p class="advising-card-title">Initial Consultation</p>
+      <div class="advising-rate">$0 <span>/ 20 min</span></div>
+      <p class="advising-desc">A no-commitment introductory call to get to know you, understand your goals, and see how I can help.</p>
+      <ul class="advising-features">
+        <li>Overview of your application or situation</li>
+        <li>Identify key areas to work on</li>
+        <li>Recommendations for next steps</li>
+        <li>No obligation to continue</li>
+      </ul>
+    </div>
+
+    <div class="advising-card featured">
+      <span class="advising-card-badge popular">Most popular</span>
+      <p class="advising-card-title">1-on-1 Session</p>
+      <div class="advising-rate">$75 <span>/ hour</span></div>
+      <p class="advising-desc">A focused, personalized session tailored to wherever you are in the process — from early planning to interview prep.</p>
+      <ul class="advising-features">
+        <li>Personal statement review and editing</li>
+        <li>Application strategy and school list</li>
+        <li>PM&R residency application guidance</li>
+        <li>Interview preparation and mock interviews</li>
+        <li>ERAS and MSPE guidance</li>
+      </ul>
+    </div>
+
+    <div class="advising-card">
+      <span class="advising-card-badge standard">Package</span>
+      <p class="advising-card-title">Comprehensive Package</p>
+      <div class="advising-rate">$250 <span>/ 4 sessions</span></div>
+      <p class="advising-desc">Four dedicated sessions for applicants who want consistent support throughout the application cycle.</p>
+      <ul class="advising-features">
+        <li>Everything in the 1-on-1 session</li>
+        <li>Full personal statement overhaul</li>
+        <li>Secondary essay guidance</li>
+        <li>Email support between sessions</li>
+        <li>Post-match debrief and planning</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="advising-topics">
+    <p class="sec-label">Areas of expertise</p>
+    <h3 style="font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:400;color:var(--navy);margin-bottom:0">What I can help with</h3>
+    <div class="advising-topics-grid">
+      <div class="advising-topic">
+        <div class="advising-topic-icon">🎓</div>
+        <div>
+          <p class="advising-topic-title">Medical school applications</p>
+          <p class="advising-topic-desc">AMCAS strategy, personal statement, school selection, secondaries, and interview preparation for MD and DO programs.</p>
+        </div>
+      </div>
+      <div class="advising-topic">
+        <div class="advising-topic-icon">♿</div>
+        <div>
+          <p class="advising-topic-title">PM&R residency matching</p>
+          <p class="advising-topic-desc">Specialty-specific guidance for Physical Medicine and Rehabilitation, including how to stand out as a PM&R applicant and what programs look for.</p>
+        </div>
+      </div>
+      <div class="advising-topic">
+        <div class="advising-topic-icon">📄</div>
+        <div>
+          <p class="advising-topic-title">Personal statement and essays</p>
+          <p class="advising-topic-desc">Crafting a compelling narrative that reflects your unique story, motivations, and fit for your chosen specialty.</p>
+        </div>
+      </div>
+      <div class="advising-topic">
+        <div class="advising-topic-icon">🗣️</div>
+        <div>
+          <p class="advising-topic-title">Interview preparation</p>
+          <p class="advising-topic-desc">Mock interviews, common question coaching, and strategy for both medical school and residency interviews including MMI format.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="advising-cta">
+    <div class="advising-cta-text">
+      <h3>Start with a free 20-minute consultation</h3>
+      <p>No commitment. Just an honest conversation about your goals.</p>
+    </div>
+    <a href="mailto:michaelmoradi1@gmail.com?subject=Advising%20Consultation%20Request" class="advising-cta-btn">Book free consultation</a>
+  </div>
+
+</section>
+
 <!-- COMING SOON -->
 <section class="coming-sec" id="coming-soon">
   <div class="coming-inner">
@@ -692,10 +823,10 @@ h1{animation-delay:0.15s}
   <p class="sec-label">Get in touch</p>
   <h2 class="sec-title">Let's connect</h2>
   <div class="contact-grid">
-    <a class="contact-card" href="mailto:michaelmoradi1@gmail.com">
+    <a class="contact-card" href="/cdn-cgi/l/email-protection#1875717b70797d7475776a797c7129587f75797174367b7775">
       <div class="contact-icon">✉️</div>
       <p class="contact-type">Email</p>
-      <p class="contact-val">michaelmoradi1@gmail.com</p>
+      <p class="contact-val"><span class="__cf_email__" data-cfemail="462b2f252e27232a2b293427222f7706212b272f2a6825292b">[email&#160;protected]</span></p>
       <span class="contact-arrow">Send a message →</span>
     </a>
     <a class="contact-card" href="https://www.linkedin.com/in/michaelmoradi" target="_blank" rel="noopener">
@@ -708,10 +839,4 @@ h1{animation-delay:0.15s}
       <div class="contact-icon">🖥️</div>
       <p class="contact-type">GitHub</p>
       <p class="contact-val">github.com/mmoradi98</p>
-      <span class="contact-arrow">See my work →</span>
-    </a>
-  </div>
-</section>
-
-<footer>
-  <div class="footer-name">Michael M. Moradi, <span>MD</sp
+      <sp
