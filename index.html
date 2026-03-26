@@ -244,6 +244,19 @@ h1 em{font-style:italic;color:var(--gold)}
 .advising-cta-btn{font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--navy);background:var(--gold);border:none;padding:0.85rem 2rem;cursor:pointer;text-decoration:none;display:inline-block;transition:opacity 0.2s;white-space:nowrap}
 .advising-cta-btn:hover{opacity:0.85}
 
+
+/* SIDELINE COVERAGE */
+.sideline-sec{background:var(--bg);padding:5rem}
+.sideline-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.5rem;margin-top:0}
+.sideline-card{background:var(--white);border:1px solid var(--border);border-radius:4px;padding:1.75rem 2rem;transition:border-color 0.2s}
+.sideline-card:hover{border-color:var(--teal)}
+.sideline-card-header{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;margin-bottom:1rem}
+.sideline-sport-icon{font-size:1.75rem;flex-shrink:0}
+.sideline-date{font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-top:0.2rem}
+.sideline-team{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:400;color:var(--navy);margin-bottom:0.2rem;line-height:1.3}
+.sideline-level{font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;padding:0.2rem 0.65rem;border-radius:100px;background:var(--teal-light);color:var(--teal);display:inline-block;margin-bottom:0.75rem}
+.sideline-detail{font-size:0.82rem;color:var(--muted);line-height:1.7}
+
 /* COMING SOON */
 .coming-sec{background:var(--bg);padding:5rem;text-align:center}
 .coming-inner{max-width:580px;margin:0 auto}
@@ -308,9 +321,10 @@ h1{animation-delay:0.15s}
     <li><a href="#about">About</a></li>
     <li><a href="#education">Education</a></li>
     <li><a href="#publications">Publications</a></li>
-    <li><a href="#costco">Costco reviews</a></li>
     <li><a href="#advising">Advising</a></li>
+    <li><a href="#sideline">Sideline</a></li>
     <li><a href="#coming-soon">Coming soon</a></li>
+    <li><a href="#costco">Costco reviews</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
@@ -575,6 +589,98 @@ h1{animation-delay:0.15s}
     </a>
 
     </div>
+</section>
+
+<!-- COMING SOON -->
+<section class="coming-sec" id="coming-soon">
+  <div class="coming-inner">
+    <p class="sec-label" style="text-align:center">What's next</p>
+    <h2 class="sec-title" style="text-align:center">Coming soon</h2>
+    <p style="font-size:0.9rem;color:var(--muted);line-height:1.85;margin-top:-0.5rem">This section is under construction check back as residency progresses.</p>
+    <div class="coming-grid">
+      <div class="coming-card">
+        <div class="coming-icon">🔬</div>
+        <p class="coming-title">Research &amp; Publications</p>
+        <span class="coming-tag"><span class="coming-tag-dot"></span> Loading</span>
+        <div class="coming-bar"><div class="coming-bar-fill" style="width:20%"></div></div>
+      </div>
+      <div class="coming-card">
+        <div class="coming-icon">🏆</div>
+        <p class="coming-title">Awards &amp; Honors</p>
+        <span class="coming-tag"><span class="coming-tag-dot"></span> Loading</span>
+        <div class="coming-bar"><div class="coming-bar-fill" style="width:35%"></div></div>
+      </div>
+      <div class="coming-card">
+        <div class="coming-icon">🎤</div>
+        <p class="coming-title">Presentations</p>
+        <span class="coming-tag"><span class="coming-tag-dot"></span> Loading</span>
+        <div class="coming-bar"><div class="coming-bar-fill" style="width:15%"></div></div>
+      </div>
+      <div class="coming-card">
+        <div class="coming-icon">♿</div>
+        <p class="coming-title">Rotations</p>
+        <span class="coming-tag"><span class="coming-tag-dot"></span> Loading</span>
+        <div class="coming-bar"><div class="coming-bar-fill" style="width:50%"></div></div>
+      </div>
+      <div class="coming-card">
+        <div class="coming-icon">👥</div>
+        <p class="coming-title">Leadership</p>
+        <span class="coming-tag"><span class="coming-tag-dot"></span> Loading</span>
+        <div class="coming-bar"><div class="coming-bar-fill" style="width:25%"></div></div>
+      </div>
+      <div class="coming-card">
+        <div class="coming-icon">📝</div>
+        <p class="coming-title">Blog &amp; Notes</p>
+        <span class="coming-tag"><span class="coming-tag-dot"></span> Loading</span>
+        <div class="coming-bar"><div class="coming-bar-fill" style="width:10%"></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="coming-sec" id="coming-soon">
+  <div class="coming-inner">
+    <p class="sec-label" style="text-align:center">What's next</p>
+    <h2 class="sec-title" style="text-align:center">Coming soon</h2>
+    <p style="font-size:0.9rem;color:var(--muted);line-height:1.85;margin-top:-0.5rem">This section is under construction check back as residency progresses.</p>
+    <div class="coming-grid">
+      <div class="coming-card">
+        <div class="coming-icon">🔬</div>
+        <p class="coming-title">Research &amp; Publications</p>
+        <span class="coming-tag"><span class="coming-tag-dot"></span> Loading</span>
+        <div class="coming-bar"><div class="coming-bar-fill" style="width:20%"></div></div>
+      </div>
+      <div class="coming-card">
+        <div class="coming-icon">🏆</div>
+        <p class="coming-title">Awards &amp; Honors</p>
+        <span class="coming-tag"><span class="coming-tag-dot"></span> Loading</span>
+        <div class="coming-bar"><div class="coming-bar-fill" style="width:35%"></div></div>
+      </div>
+      <div class="coming-card">
+        <div class="coming-icon">🎤</div>
+        <p class="coming-title">Presentations</p>
+        <span class="coming-tag"><span class="coming-tag-dot"></span> Loading</span>
+        <div class="coming-bar"><div class="coming-bar-fill" style="width:15%"></div></div>
+      </div>
+      <div class="coming-card">
+        <div class="coming-icon">♿</div>
+        <p class="coming-title">Rotations</p>
+        <span class="coming-tag"><span class="coming-tag-dot"></span> Loading</span>
+        <div class="coming-bar"><div class="coming-bar-fill" style="width:50%"></div></div>
+      </div>
+      <div class="coming-card">
+        <div class="coming-icon">👥</div>
+        <p class="coming-title">Leadership</p>
+        <span class="coming-tag"><span class="coming-tag-dot"></span> Loading</span>
+        <div class="coming-bar"><div class="coming-bar-fill" style="width:25%"></div></div>
+      </div>
+      <div class="coming-card">
+        <div class="coming-icon">📝</div>
+        <p class="coming-title">Blog &amp; Notes</p>
+        <span class="coming-tag"><span class="coming-tag-dot"></span> Loading</span>
+        <div class="coming-bar"><div class="coming-bar-fill" style="width:10%"></div></div>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- COSTCO REVIEWS -->
@@ -843,52 +949,28 @@ h1{animation-delay:0.15s}
 
 </section>
 
-<!-- COMING SOON -->
-<section class="coming-sec" id="coming-soon">
-  <div class="coming-inner">
-    <p class="sec-label" style="text-align:center">What's next</p>
-    <h2 class="sec-title" style="text-align:center">Coming soon</h2>
-    <p style="font-size:0.9rem;color:var(--muted);line-height:1.85;margin-top:-0.5rem">This section is under construction check back as residency progresses.</p>
-    <div class="coming-grid">
-      <div class="coming-card">
-        <div class="coming-icon">🔬</div>
-        <p class="coming-title">Research &amp; Publications</p>
-        <span class="coming-tag"><span class="coming-tag-dot"></span> Loading</span>
-        <div class="coming-bar"><div class="coming-bar-fill" style="width:20%"></div></div>
+<!-- SIDELINE COVERAGE -->
+<section class="sideline-sec" id="sideline">
+  <p class="sec-label">Clinical sports medicine</p>
+  <h2 class="sec-title" style="margin-bottom:0.75rem">Sideline coverage</h2>
+  <p style="font-size:0.9rem;color:var(--muted);max-width:540px;line-height:1.85;margin-bottom:3rem">Providing on-site medical coverage for collegiate and community athletic events, with a focus on musculoskeletal assessment and acute injury management.</p>
+
+  <div class="sideline-grid">
+
+    <div class="sideline-card">
+      <div class="sideline-card-header">
+        <div class="sideline-sport-icon">🥍</div>
       </div>
-      <div class="coming-card">
-        <div class="coming-icon">🏆</div>
-        <p class="coming-title">Awards &amp; Honors</p>
-        <span class="coming-tag"><span class="coming-tag-dot"></span> Loading</span>
-        <div class="coming-bar"><div class="coming-bar-fill" style="width:35%"></div></div>
-      </div>
-      <div class="coming-card">
-        <div class="coming-icon">🎤</div>
-        <p class="coming-title">Presentations</p>
-        <span class="coming-tag"><span class="coming-tag-dot"></span> Loading</span>
-        <div class="coming-bar"><div class="coming-bar-fill" style="width:15%"></div></div>
-      </div>
-      <div class="coming-card">
-        <div class="coming-icon">♿</div>
-        <p class="coming-title">Rotations</p>
-        <span class="coming-tag"><span class="coming-tag-dot"></span> Loading</span>
-        <div class="coming-bar"><div class="coming-bar-fill" style="width:50%"></div></div>
-      </div>
-      <div class="coming-card">
-        <div class="coming-icon">👥</div>
-        <p class="coming-title">Leadership</p>
-        <span class="coming-tag"><span class="coming-tag-dot"></span> Loading</span>
-        <div class="coming-bar"><div class="coming-bar-fill" style="width:25%"></div></div>
-      </div>
-      <div class="coming-card">
-        <div class="coming-icon">📝</div>
-        <p class="coming-title">Blog &amp; Notes</p>
-        <span class="coming-tag"><span class="coming-tag-dot"></span> Loading</span>
-        <div class="coming-bar"><div class="coming-bar-fill" style="width:10%"></div></div>
-      </div>
+      <span class="sideline-level">Collegiate</span>
+      <p class="sideline-team">Manhattan University Men's Lacrosse</p>
+      <p class="sideline-date">March 25, 2026</p>
+      <p class="sideline-detail" style="margin-top:0.75rem">On-site sideline physician coverage for Manhattan University men's lacrosse. Responsibilities included pre-game medical assessment, acute injury evaluation and management, and return-to-play decision making.</p>
     </div>
+
   </div>
 </section>
+
+
 
 <!-- CONTACT -->
 <section class="contact-sec" id="contact">
