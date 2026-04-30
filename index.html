@@ -213,6 +213,32 @@ h1 em{font-style:italic;color:var(--gold)}
 .pending-dot{width:8px;height:8px;background:var(--gold);border-radius:50%;animation:pulse 1.8s ease infinite}
 
 
+
+/* BOOKMARKS */
+.bookmarks-sec{background:var(--navy);padding:5rem}
+.bookmarks-sec .sec-label{color:var(--gold)}
+.bookmarks-sec .sec-title{color:#fff;margin-bottom:0.5rem}
+.bookmarks-sec .sec-subtitle{font-size:0.88rem;color:rgba(255,255,255,0.45);margin-bottom:2.5rem}
+.bm-lock{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;max-width:360px;margin:0 auto;padding:2.5rem;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:4px}
+.bm-lock-icon{font-size:2rem}
+.bm-lock p{font-size:0.85rem;color:rgba(255,255,255,0.5);text-align:center}
+.bm-input-wrap{display:flex;gap:0;width:100%}
+.bm-input{flex:1;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.15);border-right:none;padding:0.75rem 1rem;font-family:'Inter',sans-serif;font-size:0.9rem;color:#fff;outline:none}
+.bm-input::placeholder{color:rgba(255,255,255,0.3)}
+.bm-input:focus{border-color:var(--gold)}
+.bm-btn{background:var(--gold);border:none;color:var(--navy);font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;padding:0.75rem 1.25rem;cursor:pointer;font-family:'Inter',sans-serif;font-weight:500;transition:opacity 0.2s}
+.bm-btn:hover{opacity:0.85}
+.bm-error{font-size:0.78rem;color:#f87171;display:none}
+.bm-content{display:none}
+.bm-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1rem;margin-top:0}
+.bm-card{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);padding:1.25rem 1.5rem;border-radius:4px;text-decoration:none;transition:border-color 0.2s,background 0.2s;display:flex;align-items:center;gap:1rem}
+.bm-card:hover{border-color:var(--gold);background:rgba(201,168,76,0.08)}
+.bm-card-icon{font-size:1.2rem;flex-shrink:0}
+.bm-card-name{font-size:0.88rem;font-weight:500;color:#fff;margin-bottom:0.15rem}
+.bm-card-url{font-size:0.72rem;color:rgba(255,255,255,0.35);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:180px}
+.bm-lock-btn{font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.35);background:none;border:1px solid rgba(255,255,255,0.1);padding:0.4rem 1rem;cursor:pointer;margin-top:1.5rem;transition:color 0.2s}
+.bm-lock-btn:hover{color:#fff}
+
 /* CAREER ADVISING */
 .advising-sec{background:var(--white);padding:5rem}
 .advising-intro{max-width:600px;margin-bottom:3rem}
@@ -325,6 +351,7 @@ h1{animation-delay:0.15s}
     <li><a href="#sideline">Sideline</a></li>
     <li><a href="#coming-soon">Coming soon</a></li>
     <li><a href="#costco">Costco reviews</a></li>
+    <li><a href="#bookmarks">My links</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
@@ -928,6 +955,70 @@ h1{animation-delay:0.15s}
 </section>
 
 
+
+<!-- BOOKMARKS -->
+<section class="bookmarks-sec" id="bookmarks">
+  <p class="sec-label">Private</p>
+  <h2 class="sec-title">My links</h2>
+  <p class="sec-subtitle">Password protected. Accessible from any device.</p>
+
+  <div class="bm-lock" id="bm-lock">
+    <div class="bm-lock-icon">🔐</div>
+    <p>Enter your password to access your bookmarks</p>
+    <div class="bm-input-wrap">
+      <input class="bm-input" type="password" id="bm-password" placeholder="Password" onkeydown="if(event.key==='Enter')bmUnlock()"/>
+      <button class="bm-btn" onclick="bmUnlock()">Unlock</button>
+    </div>
+    <p class="bm-error" id="bm-error">Incorrect password. Try again.</p>
+  </div>
+
+  <div class="bm-content" id="bm-content">
+    <div class="bm-grid">
+
+      <a class="bm-card" href="https://docs.google.com/spreadsheets/d/17eF4LnDnKFOEBW9_RXmWxO1Um-mlCHdyXFmllard5FI/edit?gid=589593563#gid=589593563" target="_blank" rel="noopener">
+        <div class="bm-card-icon">📅</div>
+        <div>
+          <p class="bm-card-name">Viewable Schedule 2025-2026</p>
+          <p class="bm-card-url">docs.google.com/spreadsheets</p>
+        </div>
+      </a>
+
+    </div>
+    <button class="bm-lock-btn" onclick="bmLock()">🔒 Lock</button>
+  </div>
+</section>
+
+<script>
+const BM_HASH = "65dba72cbbdf22af4dcb918c0b3b37e731ee9d1b54baef027376126cbbf4e0d9";
+async function bmUnlock() {
+  const pw = document.getElementById('bm-password').value;
+  const enc = new TextEncoder();
+  const buf = await crypto.subtle.digest('SHA-256', enc.encode(pw));
+  const hash = Array.from(new Uint8Array(buf)).map(b=>b.toString(16).padStart(2,'0')).join('');
+  if (hash === BM_HASH) {
+    document.getElementById('bm-lock').style.display = 'none';
+    document.getElementById('bm-content').style.display = 'block';
+    document.getElementById('bm-error').style.display = 'none';
+    sessionStorage.setItem('bm_unlocked', '1');
+  } else {
+    document.getElementById('bm-error').style.display = 'block';
+    document.getElementById('bm-password').value = '';
+  }
+}
+function bmLock() {
+  document.getElementById('bm-lock').style.display = 'flex';
+  document.getElementById('bm-content').style.display = 'none';
+  document.getElementById('bm-password').value = '';
+  sessionStorage.removeItem('bm_unlocked');
+}
+// Auto-unlock if already unlocked this session
+if (sessionStorage.getItem('bm_unlocked') === '1') {
+  document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('bm-lock').style.display = 'none';
+    document.getElementById('bm-content').style.display = 'block';
+  });
+}
+</script>
 
 <!-- CONTACT -->
 <section class="contact-sec" id="contact">
