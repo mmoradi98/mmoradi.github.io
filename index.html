@@ -215,6 +215,21 @@ h1 em{font-style:italic;color:var(--gold)}
 
 
 
+
+/* VISIT COUNTER */
+.visit-counter{
+  position:fixed;bottom:1.25rem;right:1.25rem;z-index:999;
+  background:var(--navy);border:1px solid rgba(201,168,76,0.25);
+  border-radius:100px;padding:0.4rem 0.9rem;
+  display:flex;align-items:center;gap:0.5rem;
+  box-shadow:0 4px 20px rgba(0,0,0,0.2);
+  opacity:0.85;transition:opacity 0.2s;
+}
+.visit-counter:hover{opacity:1}
+.visit-counter-dot{width:6px;height:6px;background:#5ecbb8;border-radius:50%;animation:pulse 2s ease infinite;flex-shrink:0}
+.visit-counter img{height:14px;display:block;filter:brightness(0) invert(1);opacity:0.7}
+.visit-counter-label{font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.45)}
+
 /* COUNTDOWN */
 .countdown-bar{
   background:var(--navy2);
@@ -1056,6 +1071,9 @@ if (sessionStorage.getItem('costco_unlocked') === '1') {
     <div class="sideline-card">
       <div class="sideline-card-header">
         <div class="sideline-sport-icon">🥍</div>
+        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/7/7c/Manhattan_Jaspers_logo.svg/200px-Manhattan_Jaspers_logo.svg.png"
+          alt="Manhattan University" style="height:48px;width:auto;object-fit:contain;opacity:0.85"
+          onerror="this.style.display='none'"/>
       </div>
       <span class="sideline-level">Collegiate</span>
       <p class="sideline-team">Manhattan University Men's Lacrosse</p>
